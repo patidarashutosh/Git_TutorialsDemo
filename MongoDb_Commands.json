@@ -1,0 +1,164 @@
+Database > Collections(Tables) > Documents (Rows)
+
+Creating Database:
+	use Database_Name ←
+		Ex: use webtech ←
+List Database(current working Database)
+	db ←
+List All the Databases
+	show dbs ←
+Inserting Document inside Database	
+	db.collection_Name.insert({"key":"value"}) ←
+		Ex: db.myCollection.insert({"name":"ashutosh"}) ←
+
+NOTE: Whenever you Create any Document inside any Collection,
+	it will auto Generate the Unique Id for each Document byDefault.	
+		
+Drop / Delete Database
+	shitch the database you want to delete
+		use database_name ←
+	then execute command	
+		db.dropDatabase() ←
+		
+Creating Collections And Drop/Deleting Collections
+Creating Collections
+method 1 : It will create a blank Collection with name which is given in the Double quotes(" ")
+			db.createCollection("Collection_Name") ←
+			Ex: db.createCollection("demoCollection") ←
+	List all the Collections in the database 
+			show collections ←
+method 2 : This will create the Collection if not Exist and if Exist it will insert the Document in it.
+			db.collection_Name.insert({"key":"value"}) ←
+			db.demoCollection.insert("Technology":"JavaScript")	←	
+			
+Drop/Deleting Collections
+	db.Collection_Name.drop() ←
+		Ex: db.demoCollection.drop()    (it will return True if Collection deleted successfully otherwise false)	
+		
+		
+Inserting Document inside Database
+create database 
+	use school ←
+create collection
+	The below statement will insert the one Document inside the students collection:
+		db.students.insert({"studentId":"01","name":"lucky","class":"4th","age":"8"})  ←
+	Now if we want to insert multiple documents(Records) inside the students collection then below statement will work
+		db.students.insert([
+			{
+				"studentId":"02",
+				"name":"vikas",
+				"class":"10th",
+				"age":"15"
+			},
+			{
+				"studentId":"03",
+				"name":"kisan",
+				"class":"11th",
+				"age":"16"
+			},
+			{
+				"studentId":"04",
+				"name":"ramu",
+				"class":"12th",
+				"age":"16"
+			},
+			{
+				"studentId":"05",
+				"name":"shamu",
+				"class":"8th",
+				"age":"12"
+			},
+		])	←
+
+How to Query Data  from the Document
+	use school ←
+	db.students.find() ←     It will give all the Data from students Collection
+	db.students.find().pretty() ←  It will give the Formatted Data	(JSON Format)
+	
+Query to Find the First Document from students
+	db.students.findOne() ← 	 
+Query to Find the student where studentId is "04" from students
+	db.students.find({"studentId":"04"})	←
+Query to Find the student where age is grater than 14 from students	
+	db.students.find({"age": {$gt : 14}})	
+Query to Find the student where age is grater than and equal to 14 from students	
+	db.students.find({"age": {$gte : 14}})	
+Query to Find the student where age is less than 14 from students	
+	db.students.find({"age": {$lt : 14}})	
+Query to Find the student where age is less than and equal to 14 from students	
+	db.students.find({"age": {$lte : 14}})	
+Query to Find the student where age is not equal to 14 from students	
+	db.students.find({"age": {$ne : 14}})	
+
+
+AND and OR Conditions 
+		use school ← 
+		db.students.find() ←
+	AND operator using "," (Comma ) between name and Age
+		db.students.find({"name" : "ashu" ,"age" : "25"})    ←	  
+	OR operator
+		 db.students.find({$or : [{"name" : "vikas"},{"age" : "16"}]})    ←
+	Unsing AND and OR operator together in a single Query
+		db.students.find({"name" : "lucky", $or: [{"age" : "15"},{"age" : 16}]})
+
+Updating the Document
+	use school 	←	
+	db.find() ←
+To update single Document - Query to update age where name is rani in students	
+	db.students.update({"name" : "rani"},{$set : {"age" : 25}})	←
+To update multiple Documents -	Query to update class where age is 15
+	db.students.update({"age" : 15},{$set : {"class" : "11th"}},{multi : true})	←
+
+Command For Updating and Inserting the Data	
+Save Command - This command first check for the given id in the collection and if it Exist then it 
+				it will update the same Document otherwise it will create the new Document with the 
+				given id in the save Command 
+	db.students.save({ 
+			"_id" : ObjectId("5e47ff16f58759c32e06c691"), 
+			"studentId" : "01",
+			"name" : "Bhema", 
+			"class" : "11th", 
+			"age" : 15 
+		}) ←
+		
+		
+Delete or Remove Documents from Database
+	Please be Careful while using the below Command, It will remove all the Documents inside a collection.
+	if remove() command is used without parameters or Conditions it will remove all documents.	
+		db.students.remove() ←	
+	remove() Command with some conditions :
+		below command will match exact id and remove it
+			db.students.remove({
+				"_id" : ObjectId("5e47ff16f58759c32e06c69b")
+			}) ←
+		the below command will delete all the matches where age is 25		
+			db.students.remove({"age" : 25})  ←
+		the below command will delete the 1st matche where age is 25
+			db.students.remove({"age" : 25}, 1 )  ←
+		the below command will delete the 1st three matches( 1st three documents) where age is 25
+			db.students.remove({"age" : 25}, 3 )  ←	
+			
+Projection In MongoDB			
+
+	 db.students.find({},{"name": 1})  ←
+	 db.students.find({},{"name": 1,"_id" : 0})  ←
+	 db.students.find({},{"name": 1,"_id" : false})  ←
+	 
+LIMIT 
+		db.students.find({},{"name": 1,"_id" : false, "age" : 1, "class" : 1}).limit(4)  ←
+SKIP
+		db.students.find({},{"name": 1,"_id" : false, "age" : 1, "class" : 1}).skip(4)  ←	
+
+Use of SKIP and LIMIT together
+		db.students.find({},{"name": 1,"_id" : false, "age" : 1, "class" : 1}).skip(4).limit(3)  ←	
+
+Sorting using sort() method 
+	Where 1 is for assending order and -1 is for desending order :
+		Query for sort by name in alphabatical(Assenging) order
+			db.students.find({},{"name": 1,"_id" : false, "age" : 1, "class" : 1}).sort({"name" : 1})  ←
+		Query for sort by name in alphabatical(Decending)order
+			db.students.find({},{"name": 1,"_id" : false, "age" : 1, "class" : 1}).sort({"name" : -1})  ←
+		Query for sort by age from highest to lowest order
+			db.students.find({},{"name": 1,"_id" : false, "age" : 1, "class" : 1}).sort({"age" : 1})  ←
+		Query for sort by age from lowest to highest order
+			db.students.find({},{"name": 1,"_id" : false, "age" : 1, "class" : 1}).sort({"age" : 1})  ←
