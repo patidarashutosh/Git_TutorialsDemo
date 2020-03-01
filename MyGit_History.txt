@@ -1,0 +1,334 @@
+  157  git
+  158  git status
+  159  git config --global user.name "ashutosh"
+  160  git config --global user.email "patidarashu6@gmail.com"
+  161  git config --list
+  162  git config --global user.name "ashutosh"
+ 
+  164  git config user.name 
+  165  git config user.email 
+  172  git status
+  173  ls
+  174  ls -a
+  175  rm -rf .git/
+ 
+  177  ls -a
+  179  git status 
+  180  git init
+  181  git status
+  182  git add --a
+  183  git status
+  184  git commit -m "Initial commit"
+  185  git status
+  186  git log
+  187  git status
+  188  git commit hello/demofiles/test2.txt 
+  189  clear
+  190  git status
+  191  git add hello/demofiles/test2.txt 
+  192  git status
+  193  git commit -m "changed hello/demofiles/test2.txt" 
+  194  git status 
+  195  git add --a
+  196  git status
+  197  git commit -m "all changed" 
+  198  git status
+  199  git log
+  200  exit
+  201  git status
+  202  git init --global
+  203  git init
+  204  git status
+  205  git add -a 
+  206  git add MongoDbCommands.json 
+  207  git status
+  208  git commit -m 'added MongoDB Commands'
+  209  git status
+  210  git status
+  211  git log
+  212  agit add --
+  213  git add --a
+  214  git status
+  215  git commit -m "all done"
+  216  git status
+  217  git log
+  218  git status
+  219  rm -rf .git
+  220  git status
+  221  clar
+  222  clear
+  223  git clone https://github.com/tensorflow/tensorflow.git
+  224  git clone https://github.com/tensorflow/tensorflow.git
+  225  ls
+  226  rm -rf tensorflow/ 
+  227  ls
+  228  git clone https://github.com/tensorflow/tensorflow.git
+  229  rm -rf tensorflow/ 
+  230  ls
+  231  git clone https://github.com/DataTables/DataTables.git 
+  232  ls
+  233  cd DataTables/
+  234  git status
+  235  clear
+  236  ls
+  237  cd ..
+  238  ls
+  239  rm -rf .git
+  240  ls
+  241  cleaar
+  242  clear
+  243  git status
+  244  git init
+  245  clear
+  246  git status
+  247  git add MongoDbCommands.json dashbord.html mouseoverDemo.html 
+  249  git status
+  250  git add mouseoverDemo.html 
+  251  git status
+  252  git commit -m "all done"
+  253  git status
+  254  git log
+  255  touch error.log "asfafffffafaafaf"
+  256  touch .gitignore
+  257  ls
+  258  rm asfafffffafaafaf 
+  259  ls
+  260  touch .gitignore
+  261  ls
+  262  ls -a
+  263  clear
+  266  git status
+  267  git add --a
+  268  git status
+  269  git commit -m ".gitignore file added"
+  274  git status
+  290  git add .
+  291  git status
+  292  git commit -m "files moved to outer dir"
+  299  git status
+  300  git add .
+  301  git status
+  302  git commit -m "inside dir is ignored and style changed"
+  303  git status
+  305  git log
+  308  git status
+  309  git add .
+  311  git status
+  312  git diff
+  313  git add .
+  314  git diff
+  315  git status
+  316  git diff --staged
+  317  git status
+  318  git add .
+  319  git commit -m "git diff and git diff --staged"
+  320  git status
+  328  git add BackButton.txt 
+  330  git status
+  331  git commit -a -m "Direct commit for file contact"
+  332  git status
+  333  git add .
+  334  git status
+  335  git commit -m "added contact info"
+  336  git status
+  337  git log
+  376  git rm abc.txt 
+  377  git rm -rf abc.txt 
+  378  git status
+  379  git add .
+  380  git commit -m 'new added' 
+  381  clear
+  383  git status
+  384  git add .
+  385  git status
+  386  git commit -m 'rename abc to xyz' 
+  389  git status
+  390  git rm xyz.txt 
+  391  git status
+  392  git commit -m 'removed xyz' 
+  393  git status
+  394  git mv RSD.log RSD_renamed.log
+  395  git mv RSD RSD_renamed.log
+  398  git mv RSD.log RSD_renamed.log
+  399  git MongoDbCommands.json MongoDb_Commands.json
+  400  git mv MongoDbCommands.json MongoDb_Commands.json
+  405  git commit -m 'renamed json file'
+  406  clear
+  408  exit
+  409  git status
+  411  git add .
+  412  git commit -m 'changed gitignore file'
+  413  git status
+  415  git rm --cached 
+  416  git rm --cached ashutosh\ patidar.contact 
+  417  git status
+  418  git commit -m 'removed contact file'
+  421  git status
+  422  git add .
+  423  git commit -m 'removed contact file'
+  424  git status
+  425  exit
+  426  git status
+  427  git log
+  428  git log -p
+  429  clear
+  430  git status
+  431  git log
+  432  git log -p
+  433  git log -p -2
+  434  clear
+  435  git log --stat
+  437  git log --pretty=oneline
+  438  git log --pretty=twoline
+  439  git log --pretty=short
+  440  git log --pretty=full
+  441  git log --pretty=short
+  442  git log --pretty=full
+  443  clear
+  444  git log --since=2.days
+  445  git log --since=40.days
+  446  git log --since=2.weeks
+  447  git log --since=12.weeks
+  448  git log --since=112.weeks
+  449  git log --since=2.months
+  450  git log --since=2.years
+  451  git log --pretty=format:"%h -- %an"
+  452  git log --pretty=format:"%h -- %ae"
+  453  git log --pretty=format:"%h -- %d"
+  454  git log --pretty=format:"%h -- %an --%T"
+  455  clear
+  456  git status
+  457  git add .
+  458  git status 
+  459  git commit -m 'To run index.html file required Internet'
+  460  git status
+  461  git log
+  462  git status
+  463  git push origin master
+  464  clear
+  465  git status
+  466  git log
+  467  git commit --amend
+  468  git status
+  470  git commit --amend
+  471  git log -p -1
+  472  git status
+  473  git add .
+  474  git status
+  475  git commit --amend
+  476  git log -p -1
+  477  git status
+  478  clear
+  479  ls -a
+  480  rm -rf .git
+  481  git status
+  482  ls -a
+  483  cd ..
+  484  ls -a
+  485  git status
+  486  clear
+  487  cd DataTables/
+  488  git status
+  489  exit
+  490  git status
+  491  ls
+  492  ls -a
+  493  rm -rf .git/
+  494  ls -a
+  495  cd ./
+  496  cd ../
+  497  ls
+  498  cd ./
+  499  ls
+  500  rm -rf .git/
+  501  git status
+  502  cd DataTables/
+  503  ls
+  504  git status 
+  505  clear
+  506  cd ..
+  507  ls
+  508  git init
+  509  git status
+  510  git add .
+  511  git status
+  512  git commit -m 'Initia commit'
+  515  git status
+  516  git restore --staged BackButton.txt
+  517  git status
+  518  git add .
+  519  git status
+  520  git restore --staged BackButton.txt
+  522  git status
+  523  git add .
+  525  git status
+  526  git checkout -- BackButton.txt
+  527  git status
+  529  git add .
+  530  git status
+  531  git commit -m 'changed backbutton'
+  532  git status
+  536  git checkout -f
+  537  git status
+  538  git add saloni.JPG 
+  539  git status
+  540  git checkout -f
+  541  git status
+  542  clear
+  543  git remote add origin https://github.com/patidarashutosh/Git_TutorialsDemo.git
+  544  git remote
+  545  git remote -v
+  546  git push -u origin master
+  547  ssh-keygen -t rsa -b 4096 -C "patidarashu6@gmail.com"
+  548  SSH_Key_Ashutosh-PC
+  549  SSH_Key_Ashutosh-PC.ssh:
+  550  SSH_Key_Ashutosh-PC.ssh
+  551  eval $(ssh-agent -s)
+  552  ssh-add ~/.ssh/id_rsa
+  553  git status
+  554  clear
+  555  ssh-keygen -t rsa -b 4096 -C "patidarashu6@gmail.com"
+  556  eval $(ssh-agent -s)
+  557  ssh-add ~/.ssh/id_rsa
+  558  tail ~/.ssh/id_rsa.pub
+  559  git push -u origin master
+  560  git status
+  562  git add .
+  563  git status
+  564  git commit -m 'new file added to remote'
+  565  git status
+  566  git push -u origin master
+  567  git status
+  572  git status
+  573  git push -u origin master
+  577  git status
+  578  git st
+  579  git config  --global alias.s
+  581  git s
+  582  git config  --global alias.s status
+  583  git s
+  584  git status
+  586  git s
+  587  git remote
+  588  git checkout -f
+  589  git s
+  590  git status
+  591  git add .
+  592  git commit -m 'changed the Headings'
+  593  git status
+  594  git push origin master
+  595  git pull origin master
+  596  git status
+  597  git push origin master
+  598  git status
+  599  history -w ~/MyGit_History.txt
+  600  ls
+  601  ls -a
+  602  history -w ~/MyGit_History.txt
+  603  git status
+  604  cls
+  605  clear
+  606  history
+  607  history -w ~/MyGit_History.txt
+  608  ls
+  609  history  > MyGit_History.txt
